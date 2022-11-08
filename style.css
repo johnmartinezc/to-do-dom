@@ -1,0 +1,17 @@
+#add {
+    background-color: green;
+    color: white;
+}
+#remove-completed-tasks {
+    background-color: yellow;
+    color: black;
+}
+#remove-all{
+    background-color: darkred;
+    color: white;
+}
+
+#todo{
+    font-size: 30px;
+    color: blue;
+}
