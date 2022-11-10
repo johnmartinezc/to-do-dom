@@ -1,6 +1,8 @@
-#add {
+
+#add{
     background-color: green;
     color: white;
+    
 }
 #remove-completed-tasks {
     background-color: yellow;
@@ -14,4 +16,10 @@
 #todo{
     font-size: 30px;
     color: blue;
+}
+
+#edit{
+    background-color: rgb(24, 219, 219);
+    color: black;
+    
 }

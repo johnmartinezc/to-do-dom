@@ -1,47 +1,57 @@
-let todo = document.querySelector('#todoList')
-
-
-let addButton = document.querySelector('#add')
+let todoform = document.querySelector('#todoForm')
+let addButton = document.querySelector('#adder')
 let removeCompletedTasksButton = document.querySelector('#remove-completed-tasks')
 let removeAllButton = document.querySelector('#remove-all')
-let todoListItems = document.querySelector('#todoListItems ')
-let newList = document.querySelector('#newlist')
+let todoInput = document.querySelector('#todoInput ')
+let newList = document.querySelector('#newlist ')
+let newListli = document.querySelectorAll('#newlist li')
 
-todo.addEventListener('submit',function(event){
+
+
+
+todoform.addEventListener('submit',function(event){
 event.preventDefault()
 let newItem = document.createElement('li')
-newItem.innerText = todoListItems.value
+newItem.innerText = todoInput.value
 console.log(newItem)
-newItem.appendChild(newItem)
-todoListItems.value = ''
+
+newList.appendChild(newItem)
+
+newItem.addEventListener('click',function(){
+    if(newItem.style.textDecoration === ''){
+        newItem.style.textDecoration = 'line-through'
+    }else if(newItem.style.textDecoration == 'line-through'){
+        newItem.style.textDecoration = ''
+  
+      }
+      })
+      
+todoInput.value = ''
+ newListli = document.querySelectorAll('#newlist li')
 })
 
 
-addButton.addEventListener('click',function(event){
+removeAllButton.addEventListener('click',function(event){
     event.preventDefault()
-    console.log("here" + "," +todoListItems.value)
-    
- 
-})
+    // console.log('remove click')
+    console.log(newListli)
+    for (let i = 0; i < newListli.length; i++) {
+        newListli[i].remove()
+    }
+}
+)
+
+
 
 removeCompletedTasksButton.addEventListener('click',function(event){
     event.preventDefault()
-    console.log("re")
+    // console.log("re")
+    console.log(newListli)
+    for (let i = 0; i < newListli.length; i++) {
+        if(newListli[i].style.textDecoration === 'line-through'){
+        newListli[i].remove()
+    }
+}
 }
 )
-removeAllButton.addEventListener('click',function(event){
-    event.preventDefault()
-    console.log('all')
-})
-
-// function add(list, arr){
-//     for (let i = 0; i < arr.length; i++) {
-//     let newItem =document.querySelector('li')
-//         newItem.innerText = arr[i]
-//         console.log(newItem)
-//         list.appendChild(newItem)
-        
-//     }
-     
-// return newList
-// }
+ 
